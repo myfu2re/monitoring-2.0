@@ -28,86 +28,73 @@ Resources
 - vm1, 2.59.38.181, adminroot / M9MRCuUCmHjjvySggoB3
 - vm2, 2.59.38.187, adminroot / zGsJPBsJWx6TwYUzDz3F
 
-==============================================================
+=====================================================================================
 
 Solution:
 
 Stack:
 AdvancedHosters - Docker - Prometheus - Loki - Grafana - Sonatype Nexus - Git
 
-ssh adminroot@2.59.38.181  ---  adminroot@wvds147624  ---  monitored_vm
+ssh adminroot@2.59.38.181  ---  adminroot@wvds147624  ---  monitored_vm  
 ssh adminroot@2.59.38.187  ---  adminroot@wvds147625  ---  monitoring_vm
 
-==============================================================
+=====================================================================================
 
 Docs/Articles:
 
-1. https://support.sonatype.com/hc/en-us/articles/213465498-Configuring-Nexus-Repository-2-for-JMX-connections
-2. https://help.sonatype.com/en/monitoring.html
-   https://help.sonatype.com/en/continuous-monitoring-of-applications.html
+Global:
+1. https://www.atatus.com/blog/java-performance-metrics/
+2. https://github.com/shazforiot/Promtail-Loki-Grafana-using-Docker-Compose/blob/main/docker-compose.yml 
 
-3. https://grafana.com/blog/2020/06/25/monitoring-java-applications-with-the-prometheus-jmx-exporter-and-grafana/
-
-4. https://www.atatus.com/blog/java-performance-metrics/
-5. https://stackoverflow.com/questions/39163880/monitoring-nexus-oss-3-0-1
-6. https://www.tencentcloud.com/document/product/457/38367
-
+Nexus:
+1. https://help.sonatype.com/en/monitoring.html 
+2. https://help.sonatype.com/en/support-features.html#SupportFeatures-Prometheus 
+3. https://support.sonatype.com/hc/en-us/articles/213465498-Configuring-Nexus-Repository-2-for-JMX-connections
+4. https://support.sonatype.com/hc/en-us/articles/218501277-Configuring-Nexus-Repository-3-To-Allow-JMX-Connections
+5. https://help.sonatype.com/en/continuous-monitoring-of-applications.html 
+6. https://stackoverflow.com/questions/39163880/monitoring-nexus-oss-3-0-1 
 7. https://www.coachdevops.com/2022/01/install-sonatype-nexus-3-using-docker.html
+8. https://github.com/sonatype/helm3-charts/issues/99 
 
-https://support.sonatype.com/hc/en-us/articles/218501277-Configuring-Nexus-Repository-3-To-Allow-JMX-Connections
+Portainer:
+1. https://github.com/ChristianLempa/boilerplates/blob/main/docker-compose/portainer/docker-compose.yaml
 
-https://github.com/sonatype/helm3-charts/issues/99
-https://help.sonatype.com/en/support-features.html#SupportFeatures-Prometheus
+Grafana:
+1. https://grafana.com/blog/2020/06/25/monitoring-java-applications-with-the-prometheus-jmx-exporter-and-grafana/
+2. https://grafana.com/blog/2024/03/11/removal-of-angularjs-support-in-grafana-what-you-need-to-know/ 
+3. https://grafana.com/docs/grafana/latest/administration/roles-and-permissions/access-control/custom-role-actions-scopes/
 
-
-
-https://github.com/prometheus/node_exporter
-https://github.com/google/cadvisor
-https://github.com/prometheus/jmx_exporter/tree/main
-https://github.com/ocadotechnology/nexus-exporter
-
-https://github.com/ChristianLempa/boilerplates/blob/main/docker-compose/nodeexporter/docker-compose.yaml
-
+Grafana/dashboards:
 https://grafana.com/grafana/dashboards/16459-infra-nexus/
 
-https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#actuator.metrics.export.prometheus
-
-https://grafana.com/blog/2024/03/11/removal-of-angularjs-support-in-grafana-what-you-need-to-know/
-
-
 Prometheus:
-https://habr.com/ru/companies/nixys/articles/785070/
+1. https://habr.com/ru/companies/nixys/articles/785070/
+2. https://www.tencentcloud.com/document/product/457/38367
+3. https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#actuator.metrics.export.prometheus 
+
+Prometheus_exporters:
+1. https://github.com/prometheus/node_exporter
+2. https://github.com/google/cadvisor
+3. https://github.com/prometheus/jmx_exporter/tree/main
+4. https://github.com/ocadotechnology/nexus-exporter
+5. https://github.com/ChristianLempa/boilerplates/blob/main/docker-compose/nodeexporter/docker-compose.yaml 
 
 Loki:
-https://grafana.com/go/webinar/getting-started-with-logging-and-grafana-loki/?pg=dash-search&plcmt=featured-cta1
-https://grafana.com/docs/loki/latest/setup/install/docker/
-https://github.com/grafana/loki
+1. https://raw.githubusercontent.com/grafana/loki/v2.2.1/cmd/loki/loki-local-config.yaml
+2. https://grafana.com/go/webinar/getting-started-with-logging-and-grafana-loki/?pg=dash-search&plcmt=featured-cta1
+3. https://grafana.com/docs/loki/latest/setup/install/docker/
+4. https://github.com/grafana/loki
 
-
-
-https://github.com/shazforiot/Promtail-Loki-Grafana-using-Docker-Compose/blob/main/docker-compose.yml
-https://gist.github.com/ruanbekker/c6fa9bc6882e6f324b4319c5e3622460 -- promtail_docker_logs.md
-
-https://raw.githubusercontent.com/grafana/loki/v2.2.1/cmd/promtail/promtail-docker-config.yaml
-https://raw.githubusercontent.com/grafana/loki/v2.2.1/cmd/loki/loki-local-config.yaml
+Promtail:
+1. https://gist.github.com/ruanbekker/c6fa9bc6882e6f324b4319c5e3622460
+2. https://raw.githubusercontent.com/grafana/loki/v2.2.1/cmd/promtail/promtail-docker-config.yaml
 
 
 Video:
-
-1. https://www.youtube.com/watch?v=27Yc3gdeuQ0
-2. https://www.youtube.com/watch?v=9TJx7QTrTyo&t=334s
-
-3. JMX Exporter - https://www.youtube.com/watch?v=0JDwT10PUyg
+1. Server Monitoring // Prometheus and Grafana Tutorial - https://www.youtube.com/watch?v=9TJx7QTrTyo&t=334s
+1. Monitoring Java Applications with Prometheus and Grafana - https://www.youtube.com/watch?v=27Yc3gdeuQ0
+2. JMX Exporter - https://www.youtube.com/watch?v=0JDwT10PUyg
 4. Loki and Promtail - https://www.youtube.com/watch?v=x2usZVRnXK4
-https://www.youtube.com/watch?v=pnycjg_9M-o
-https://www.youtube.com/watch?v=eJtrxj9U_P8
+5. Promtail Loki Grafana Using Docker Compose - https://www.youtube.com/watch?v=pnycjg_9M-o
 
-
-https://www.youtube.com/watch?v=_qhrRUKOzVE
-
-
-grafana/dashboards:
-https://grafana.com/grafana/dashboards/16459-infra-nexus/
-
-==============================================================
-
+=====================================================================================
