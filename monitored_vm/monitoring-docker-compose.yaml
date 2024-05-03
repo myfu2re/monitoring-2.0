@@ -1,0 +1,44 @@
+---
+networks:
+  loki:
+
+services:
+  promtail:
+    image: grafana/promtail:2.9.0
+    volumes:
+      - /var/log:/var/log
+      - /var/lib/docker/containers:/var/lib/docker/containers
+      - /etc/promtail/config.yml:/etc/promtail/config.yml:ro
+    command: 
+      -config.file=/etc/promtail/config.yml
+    networks:
+      - loki
+
+
+  node_exporter:
+    image: quay.io/prometheus/node-exporter:v1.8.0
+    container_name: node_exporter
+    ports:
+      - 9100:9100
+    command: "--path.rootfs=/host"
+    pid: host
+    restart: unless-stopped
+    volumes:
+      - /:/host:ro,rslave
+
+
+  cadvisor:
+    image: gcr.io/cadvisor/cadvisor:v0.49.1
+    container_name: cadvisor
+    ports:
+      - 8080:8080
+    volumes:
+      - /:/rootfs:ro
+      - /var/run:/var/run:ro
+      - /sys:/sys:ro
+      - /var/lib/docker/:/var/lib/docker:ro
+      - /dev/disk/:/dev/disk:ro
+    devices:
+      - /dev/kmsg
+    privileged: true
+    restart: unless-stopped
