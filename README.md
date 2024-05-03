@@ -2,16 +2,16 @@
 
 ==============================================================
 
-Monitoring 2.0
-Nexus
-We have 2 vms:
+Monitoring 2.0  
+Nexus  
+We have 2 vms:  
 1. vm1 and vm2 are virtual private servers. Public IP addresses and IP private addresses
 is assigned by provider
 2. One vm is “monitored” vm, another is “monitoring” vm
 3. The monitored node runs Sonatype Nexus, launched in docker. This node and
 application will be the main goal of monitoring
 
-Needs
+Needs  
 1. The architecture described in Nexus section must be implemented
 2. Pull/push approaches for metrics collection must be used, depending on the situation.
 Make sure you have the justification for the decision
@@ -24,7 +24,7 @@ servers and services they are responding for
 7. Monitoring must provide a possibility to make drill-down investigations using panels with
 graphs.
 
-Resources
+Resources  
 - vm1, 2.59.38.181
 - vm2, 2.59.38.187
 
