@@ -44,7 +44,9 @@ Docs/Articles:
 
 Global:
 1. https://www.atatus.com/blog/java-performance-metrics/
-2. https://github.com/shazforiot/Promtail-Loki-Grafana-using-Docker-Compose/blob/main/docker-compose.yml 
+2. https://github.com/shazforiot/Promtail-Loki-Grafana-using-Docker-Compose/tree/main
+3. https://docs.docker.com/config/daemon/ 
+4. https://github.com/ChristianLempa/boilerplates/tree/main
 
 Nexus:
 1. https://help.sonatype.com/en/monitoring.html 
@@ -63,9 +65,14 @@ Grafana:
 1. https://grafana.com/blog/2020/06/25/monitoring-java-applications-with-the-prometheus-jmx-exporter-and-grafana/
 2. https://grafana.com/blog/2024/03/11/removal-of-angularjs-support-in-grafana-what-you-need-to-know/ 
 3. https://grafana.com/docs/grafana/latest/administration/roles-and-permissions/access-control/custom-role-actions-scopes/
+4. https://grafana.com/go/webinar/getting-started-with-logging-and-grafana-loki/?pg=dash-search&plcmt=featured-cta1 
 
 Grafana/dashboards:
-https://grafana.com/grafana/dashboards/16459-infra-nexus/
+1. https://grafana.com/grafana/dashboards/
+2. https://grafana.com/grafana/dashboards/14282-cadvisor-exporter/
+3. https://grafana.com/grafana/dashboards/13407-loki2-0-global-metrics/
+4. https://grafana.com/grafana/dashboards/1860-node-exporter-full/
+5. https://grafana.com/grafana/dashboards/16459-infra-nexus/
 
 Prometheus:
 1. https://habr.com/ru/companies/nixys/articles/785070/
@@ -83,12 +90,16 @@ Loki:
 1. https://raw.githubusercontent.com/grafana/loki/v2.2.1/cmd/loki/loki-local-config.yaml
 2. https://grafana.com/go/webinar/getting-started-with-logging-and-grafana-loki/?pg=dash-search&plcmt=featured-cta1
 3. https://grafana.com/docs/loki/latest/setup/install/docker/
-4. https://github.com/grafana/loki
+4. https://grafana.com/docs/loki/latest/configure/
+5. https://github.com/grafana/loki
+6. https://grafana.com/docs/loki/latest/send-data/docker-driver/configuration/
 
 Promtail:
-1. https://gist.github.com/ruanbekker/c6fa9bc6882e6f324b4319c5e3622460
-2. https://raw.githubusercontent.com/grafana/loki/v2.2.1/cmd/promtail/promtail-docker-config.yaml
-
+1. https://grafana.com/docs/loki/latest/send-data/promtail/configuration/
+2. https://gist.github.com/ruanbekker/c6fa9bc6882e6f324b4319c5e3622460
+3. https://raw.githubusercontent.com/grafana/loki/v2.2.1/cmd/promtail/promtail-docker-config.yaml
+4. https://github.com/grafana/loki/issues/3635
+5. https://github.com/grafana/loki/issues/333 
 
 Video:
 1. Server Monitoring // Prometheus and Grafana Tutorial - https://www.youtube.com/watch?v=9TJx7QTrTyo&t=334s
@@ -96,5 +107,46 @@ Video:
 2. JMX Exporter - https://www.youtube.com/watch?v=0JDwT10PUyg
 4. Loki and Promtail - https://www.youtube.com/watch?v=x2usZVRnXK4
 5. Promtail Loki Grafana Using Docker Compose - https://www.youtube.com/watch?v=pnycjg_9M-o
+
+=====================================================================================
+
+Resourses:
+
+
+monitored_vm:
+
+Portainer  ---  http://2.59.38.181:9000/#!/init/admin  
+
+Nexus      ---  http://2.59.38.181:8081/  
+
+http://2.59.38.181:8081/service/metrics/healthcheck  
+http://2.59.38.181:8081/service/metrics/data  
+http://2.59.38.181:8081/service/metrics/ping  
+http://2.59.38.181:8081/service/metrics/threads  
+
+cAdvisor   ---  http://2.59.38.181:8080/containers/
+
+Nexus Exporter --- http://2.59.38.181:9184/  
+
+Node Exporter --- http://2.59.38.181:9100/  
+
+=============
+
+
+monitoring_vm:
+
+Portainer  ---  http://2.59.38.187:9000/#!/init/admin  
+
+cAdvisor --- http://2.59.38.187:8080/containers/  
+
+Prometheus --- http://2.59.38.187:9090/  
+
+Loki --- http://2.59.38.187:3100/metrics  
+         http://2.59.38.187:3100/ready  
+
+
+Grafana  ---  http://2.59.38.187:3000/login  
+              http://2.59.38.187:3000/?orgId=1  ---   Internal Org  
+              http://2.59.38.187:3000/?orgId=2  ---   Client Org  
 
 =====================================================================================
