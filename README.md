@@ -1,5 +1,7 @@
 # monitoring-2.0
+
 ==============================================================
+
 Monitoring 2.0
 Nexus
 We have 2 vms:
@@ -25,6 +27,7 @@ graphs.
 Resources
 - vm1, 2.59.38.181, adminroot / M9MRCuUCmHjjvySggoB3
 - vm2, 2.59.38.187, adminroot / zGsJPBsJWx6TwYUzDz3F
+
 ==============================================================
 
 Solution:
@@ -32,8 +35,8 @@ Solution:
 Stack:
 AdvancedHosters - Docker - Prometheus - Loki - Grafana - Sonatype Nexus - Git
 
-ssh adminroot@2.59.38.181  ---  adminroot@wvds147624
-ssh adminroot@2.59.38.187  ---  adminroot@wvds147625
+ssh adminroot@2.59.38.181  ---  adminroot@wvds147624  ---  monitored_vm
+ssh adminroot@2.59.38.187  ---  adminroot@wvds147625  ---  monitoring_vm
 
 ==============================================================
 
