@@ -25,18 +25,18 @@ servers and services they are responding for
 graphs.
 
 Resources
-- vm1, 2.59.38.181, adminroot / M9MRCuUCmHjjvySggoB3
-- vm2, 2.59.38.187, adminroot / zGsJPBsJWx6TwYUzDz3F
+- vm1, 2.59.38.181
+- vm2, 2.59.38.187
 
 =====================================================================================
 
 Solution:
 
-Stack:
-AdvancedHosters - Docker - Prometheus - Loki - Grafana - Sonatype Nexus - Git
+Stack:  
+AdvancedHosters -- Docker -- Prometheus -- Loki -- Grafana -- Sonatype Nexus -- Git
 
-ssh adminroot@2.59.38.181  ---  adminroot@wvds147624  ---  monitored_vm  
-ssh adminroot@2.59.38.187  ---  adminroot@wvds147625  ---  monitoring_vm
+2.59.38.181  ---  monitored_vm  
+2.59.38.187  ---  monitoring_vm  
 
 =====================================================================================
 
